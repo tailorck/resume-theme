@@ -1,18 +1,16 @@
 <div class="container intro-container">
   <!-- <h3 id="{{ site.about_title | slugify | default: 'about-me' }}">{{ site.about_title | default: "About Me" }}</h3> -->
   <div class="row clearfix">
-      <div class="slideshow-container">
-        <div class="mySlides fade">
-          <img src="url({{ site.about_profile_image_dir/longvue.jpg | relative_url }})" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-          <img src="url({{ site.about_profile_image_dir/greener.jpg | relative_url }})" style="width:100%">
-        </div>
-        <div class="mySlides fade">
-          <img src="url({{ site.about_profile_image_dir/with_ronin.jpg | relative_url }})" style="width:100%">
-        </div>
-        <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
-        <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    {%- if site.about_profile_images -%}
+    <div class="slideshow-container">
+      {%- for image in site.about_profile_images %}
+      <div class="mySlides fade">
+        <img src="url({{ image.path | relative_url }})" style="width:100%">
       </div>
+      {%- endfor -%}
+      <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+      <a class="next" onclick="plusSlides(1)">&#10095;</a>
+    </div>
+    {%- endif -%}
   </div>
 </div>
