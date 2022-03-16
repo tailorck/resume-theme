@@ -5,7 +5,8 @@
     <div class="slideshow-container">
       {%- for image in site.about_profile_images %}
       <div class="mySlides fade">
-        <img class="profile-img" src="url({{ image.path | relative_url }})" style="width:100%">
+        <!-- <img class="profile-img" src="url({{ image.path | relative_url }})" style="width:100%"> -->
+        <span class="profile-img" style="background-image: url({{ image.path | relative_url }})"></span>
       </div>
       {%- endfor -%}
       <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
