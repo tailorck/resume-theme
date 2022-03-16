@@ -1,28 +1,18 @@
 <div class="container intro-container">
-  <h3 id="{{ site.about_title | slugify | default: 'about-me' }}">{{ site.about_title | default:
-  "About Me" }}</h3>
+  <!-- <h3 id="{{ site.about_title | slugify | default: 'about-me' }}">{{ site.about_title | default: "About Me" }}</h3> -->
   <div class="row clearfix">
-    {%- if site.about_profile_image -%}
-      <div class="col-xs-12 col-sm-4 col-md-3 no-print">
-        <span class="profile-img" style="background-image: url({{ site.about_profile_image | relative_url }})"></span>
-      </div>
-
       <div class="slideshow-container">
         <div class="mySlides fade">
-          <img src="url({{ site.about_profile_image | relative_url }})" style="width:100%">
+          <img src="url({{ site.about_profile_image_dir/longvue.jpg | relative_url }})" style="width:100%">
         </div>
         <div class="mySlides fade">
-          <img src="url({{ site.about_profile_image | relative_url }})" style="width:100%">
+          <img src="url({{ site.about_profile_image_dir/greener.jpg | relative_url }})" style="width:100%">
         </div>
         <div class="mySlides fade">
-          <img src="url({{ site.about_profile_image | relative_url }})" style="width:100%">
+          <img src="url({{ site.about_profile_image_dir/with_ronin.jpg | relative_url }})" style="width:100%">
         </div>
         <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
         <a class="next" onclick="plusSlides(1)">&#10095;</a>
       </div>
-    {%- endif -%}
-    <div class="{{ 'col-xs-12 ' }}{%- if site.about_profile_image -%}col-sm-8 col-md-9 col-print-12{%- endif -%}">
-      {{ site.about_content | strip | markdownify }}
-    </div>
   </div>
 </div>
