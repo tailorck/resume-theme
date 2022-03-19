@@ -4,7 +4,7 @@
   <div class="row clearfix">
     <div class="slideshow-container">
       {%- for image in site.about_profile_images %}
-      <div class="mySlides fade">
+      <div class="mySlides fade-custom">
         <!-- <img class="profile-img" src="url({{ image.path | relative_url }})" style="width:100%"> -->
         <span class="profile-img" style="background-image: url({{ image.path | relative_url }})"></span>
       </div>
